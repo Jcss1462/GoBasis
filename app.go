@@ -1,8 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"example.com/m/primerPaquete"
+)
 
 func main() {
-	printInfo()
+	primerPaquete.MensajeEntrada()
+	fmt.Println(primerPaquete.Nombre)
 	fmt.Println("Soy el main")
 }
