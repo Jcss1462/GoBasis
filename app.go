@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Hello Word")
+	printInfo()
+	fmt.Println("Soy el main")
 }
