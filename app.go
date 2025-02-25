@@ -2,24 +2,38 @@ package main
 
 import (
 	"fmt"
-
-	"example.com/m/primerPaquete"
-	"example.com/m/user"
 )
 
+// Definimos una interfaz
+type Animal interface {
+	Speak() string
+}
+
+// Estructura que implementa la interfaz
+type Dog struct{}
+
+func (d Dog) Speak() string {
+	return "Woof!"
+}
+
+// Otra estructura que implementa la interfaz
+type Cat struct{}
+
+func (c Cat) Speak() string {
+	return "Meow!"
+}
+
 func main() {
-	primerPaquete.MensajeEntrada()
-	fmt.Println(primerPaquete.Nombre)
-	fmt.Println("Soy el main")
 
-	var newUser *user.User
-	var err error
-	newUser, err = user.NewUser("Juan Camilo Salazar Serna", 26)
+	var animal Animal
 
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		newUser.PrintUserInfo()
-	}
+	dog := Dog{}
+	cat := Cat{}
+
+	animal = dog
+	fmt.Println("Dog says:", animal.Speak())
+
+	animal = cat
+	fmt.Println("Cat says:", animal.Speak())
 
 }
